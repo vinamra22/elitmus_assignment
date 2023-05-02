@@ -1,0 +1,1515 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Odstránenie marginu a paddingu */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Pozadie a font */
+body {
+  background-image: url(./images/hacking.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* Kontainer blok */
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+/* Hlavička */
+.header {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  z-index: 1;
+  position: absolute;
+  color: white;
+  padding: 0.8rem; 
+}
+
+#active {
+  color: #ffffff;
+  font-size: 3.3rem;
+}
+
+#logo {
+  margin-top: -10px;
+  margin-left: -10px;
+  width: 8rem;
+}
+
+/* Veľkosť tlačídka otváracieho menu */
+.openButton > span {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: 1s;
+}
+
+/* Tlačídko otváracieho menu  */
+.openButton > span:hover {
+  color: rgb(104, 207, 233)
+}
+
+
+/* Vyskakovacie menu */
+.overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  height: 100%;
+  width: 0;
+  position: fixed;
+  float: right;
+  z-index: 1;
+  top: 0;
+  background-image: url(./images/hacking.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  right: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+/* Obsah vyskakovácieho menu */
+.overlay-content {
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Linky vyskakovacieho menu */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 3rem;
+  color: #b3aeae;
+  display: block;
+  transition: 0.3s;
+}
+
+/* Linky vyskakovacieho menu pri hoveri a fokuse */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+  transform: scale(1.1);
+}
+
+/* Zatváracie tlačídko v otváracom menu */
+.overlay .closebtn {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: 70px;
+  font-size: 60px;
+}
+
+
+/* Logo z: https://www.flaticon.com/free-icon/hacker_7570776?term=hacker&page=1&position=73&page=1&position=73&related_id=7570776&origin=search */
+.header > img {
+  margin-top: -10px;
+  margin-left: 10px;
+  width: 8rem;
+}
+
+/* Ľavá časť bez loginu s registráciou */
+.woLogin {
+  position: absolute;
+  bottom: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  justify-content: flex-end;
+
+  width: 70%;
+  padding-left: 2.5rem;
+  color: white;
+}
+
+/* Button číslo 49 z https://getcssscan.com/css-buttons-examples */
+.button-49,
+.button-49:after {
+  width: 150px;
+  height: 76px;
+  padding-left: 5px;
+  line-height: 78px;
+  font-size: 20px;
+  background: linear-gradient(45deg, transparent 5%, #01c4ff 5%);
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  letter-spacing: 3px;
+  box-shadow: 6px 0px 0px #ffffff;
+  outline: transparent;
+  margin-top: 1%;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.button-49:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  content: 'ALTERNATE TEXT';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #e2e2e2 5%, #01c4ff 5%);
+  text-shadow: -3px -3px 0px #000000, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+.button-49:hover:after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+  clip-path: var(--slice-1);
+  transform: translate(-20px, -10px);
+  }
+  10% {
+  clip-path: var(--slice-3);
+  transform: translate(10px, 10px);
+  }
+  20% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 10px);
+  }
+  30% {
+  clip-path: var(--slice-3);
+  transform: translate(0px, 5px);
+  }
+  40% {
+  clip-path: var(--slice-2);
+  transform: translate(-5px, 0px);
+  }
+  50% {
+  clip-path: var(--slice-3);
+  transform: translate(5px, 0px);
+  }
+  60% {
+  clip-path: var(--slice-4);
+  transform: translate(5px, 10px);
+  }
+  70% {
+  clip-path: var(--slice-2);
+  transform: translate(-10px, 10px);
+  }
+  80% {
+  clip-path: var(--slice-5);
+  transform: translate(20px, -10px);
+  }
+  90% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 0px);
+  }
+  100% {
+  clip-path: var(--slice-1);
+  transform: translate(0);
+  }
+}
+
+/* Pravá časť obrazovky - login */
+.login {
+  display: flex;
+  max-width: 400px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  color: white;
+
+  overflow: hidden;
+
+  background: rgba(10, 10, 10, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+/* Input div pre input */
+.input {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0rem;
+  width: 100%;
+}
+
+/* Odsadenie tagu p v div login */
+.login > p {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Výzor inputového poľa v div input */
+.input > input {
+  background: transparent;
+  color: white;
+  padding: 0.4rem 1.2rem;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid white; 
+  font-size: 0.9rem;
+}
+
+/* Ikonky vedľa inputu */
+.input > label {
+  position: absolute;
+  top: 7;
+  font-size: 1rem;
+}
+
+/* Ikonka oka pri hesle */
+.input > #eye {
+  position: absolute;
+  right: 5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Input pole pri fokuse */
+.inputBlueFocus:focus {
+  border-bottom: 3.5px solid rgb(104, 207, 233);
+}
+
+
+
+
+/* Tlačídko na potvrdenie loginu */
+.signin {
+  background: transparent;
+  
+  border: 2px solid white;
+  border-radius: 20px;
+
+  width: 40%;
+  cursor: pointer;
+
+  margin-top: 15px;
+  align-self: center;
+  padding: 0.5rem;
+
+  color: white;
+
+  transition: all 0.4s ease-in-out;
+}
+
+/* Tlačídko na potvrdenie loginu pri hoveri */
+.signin:hover {
+  text-decoration: underline;
+  border-radius: 0%;
+}
+
+/* Text pre telefóny, ktorý nás posiela sa zaregistrovať ak nemáme ešte účet */
+.mobil {
+  display: none;
+  align-self: center;
+  margin-top: 30px;
+}
+
+/* Odsadenie a farba textu v texte pre mobil */
+.mobil > a {
+  margin-top: 0.5rem;
+  color: white;
+}
+
+
+
+
+
+/* Zmeny pre Domov*/
+
+
+
+
+
+
+/* Domov div */
+.domov {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem; 
+
+  height: 100%;
+  width: 100%;
+
+  color: white;
+  
+
+  background: rgba(10, 10, 10, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+
+.statHolder {
+  padding: 3rem;
+  position:absolute;
+  width: 100%;
+  height: 50%;
+  color: white;
+  overflow:auto;
+  top: 25%;
+  text-align: center;
+  overflow: auto;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  margin: 3rem;
+  border-bottom: 1px solid white;
+  padding-bottom: 1rem;
+}
+
+
+/* Text domovu */
+.text {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  max-width: 1000px;
+  word-wrap: break-word;
+  overflow: auto;
+
+  text-align: center;
+}
+
+/* p tag v domove */
+.text > p {
+  padding: 3.2rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.typing {
+  overflow: hidden;
+  max-width: fit-content;
+  max-height: 40px;
+  text-align: center;
+  border-right: .01em solid red;
+  white-space: nowrap;
+  animation:
+    typing 3.2s steps(30, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: red; }
+}
+
+
+
+
+
+
+/* Zmeny pre Regpage*/
+
+
+
+.bluredDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  position: absolute;
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+
+.loginReg {
+  display: flex;
+  flex-direction: column;
+
+  width: 30%;
+  color: white;
+}
+
+/* Velkosť nadpisu v registračnom menu */
+.loginReg > h1 {
+  margin: 2rem;
+  font-size: 2rem;
+  align-self: center;
+}
+
+
+.inputReg {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-content: center;
+  margin: 1.2rem 0rem;
+  width: 100%;
+}
+
+/* Odsadenie v p tagu inputu */
+.loginReg > p {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Výzor menu inputu */
+.inputReg > input {
+  background: transparent;
+  color: white;
+  font-size: 1.2rem;
+
+  padding-left: 1.5rem;
+  padding-bottom: 0.3rem;
+
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid white;
+}
+
+
+/* Ikonky pri inpute */
+.inputReg > label {
+  position: absolute;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Tlačídko na potvrdenie registrácie */
+.regButton {
+  background-color: rgb(150, 18, 18);
+  border: none;
+  align-self: center;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 70%;
+  font-size: 16px;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.regButton::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.regButton:hover {
+  background-color: rgb(78, 9, 9); 
+  transform: scaleX(1.05);
+}
+
+.regButton:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+/* Ikonka oka pri hesle */
+.inputReg > #eye {
+  position: absolute;
+  top: 7;
+  right: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Ikonka oka2 pri hesle */
+.inputReg > #eye2 {
+  position: absolute;
+  top: 7;
+  right: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
+.mobilReg {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1.2rem;
+}
+
+/* Nastavenie linku v -//- */
+.mobilReg > a {
+  color: white;
+  font-size: 1.0rem;
+}
+
+.adminProblem {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1rem;
+  color: white;
+}
+
+.adminProblem > a {
+  color: white;
+  font-size: 1.0rem;
+}
+
+
+
+
+/* Zmeny pre Levely*/
+
+
+
+
+.levely {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+
+  width: 80%;
+  height: 100%;
+
+} 
+
+/* Div uloženia pozície levelov */
+.levely > ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+
+  color: white;
+
+  position:absolute;
+  width: 60%;
+  max-height: 80%;
+  overflow:auto; 
+  top: 25%;
+  bottom:25%;
+  padding: 1rem;
+}
+
+/* Výzor textu linku */
+.link {
+  color: white;
+  text-decoration: none;    
+  font-size: 1.7rem;
+}
+
+/* Div samotného levelu */
+.levelHranica {
+  border: 3px solid #FF4136;
+  border-radius: 25px;
+  background: linear-gradient(to right, #FF4136, #9B111E);
+  padding: 0.8rem 2rem;
+  margin: 1rem;
+  transition: 0.5s;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 2px;
+  text-shadow: 0px 0px 5px black;
+}
+
+
+.doneHranica {
+  border: 3px solid #1dc726;
+  border-radius: 25px;
+
+  background: linear-gradient(to right, #1dc726, #2d7a0e);
+  padding: 0.8rem 2rem;
+  margin: 1rem;
+  letter-spacing: 2px;
+  transition: 0.5s;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Div levelu pri hoveri */
+.levelHranica:hover {
+  cursor: pointer; 
+  transform: scale(1.1);
+}
+
+.doneHranica:hover {
+  cursor: pointer; 
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+
+/*Upravy pre level*/
+
+
+
+.level{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 5px;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  color: white;
+
+  overflow: auto;
+
+  background: rgba(10, 10, 10, 0.8);
+  box-shadow: 2px 2px 5px rgb(82, 80, 79);
+}
+
+/* Veľkosť textu nadpisu v leveli */
+.level > h1 {
+  margin: 15px;
+  font-size: 3rem;
+  color: white
+}
+/* Veľkosť textu počtu bodov v leveli */
+.level > h5 {
+  font-size: 1.7rem;
+  color: white
+}
+
+/* Nastavenia pomôcky v leveli */
+.pomocka {  
+  border-bottom: 1px white solid;
+  border-top: 1px white solid;
+  padding: 0.5rem;
+  text-align: center;
+  max-width: 500px;
+  margin-top: 1.8rem;
+  font-size: 1.2rem;
+  color: white
+}
+
+/* Zmena veľkosti fotky v pomôcke */
+.pomocka > img {
+width: 8rem; 
+height: auto
+}
+
+.pomocka a, .pomocka a:link, .pomocka a:visited {
+  color: white;
+}
+
+.pomocka a:hover {
+  color: red;
+}
+
+/* Špeciálna zmena pre fotku v 5 úlohe */
+#fotka {
+margin-left: 17px;
+width: 150px;
+height: 150px;
+}
+
+
+
+
+.levelInput {
+  border-bottom: 2px solid white;
+}
+
+.level input {
+  font-size: 1.5rem;
+  margin-top: 4rem;
+  background: transparent;
+  color: white;
+  padding: 0.4rem 1.2rem;
+  margin-bottom: 10px;
+  border: none;
+}
+
+.level input::placeholder {
+  color: white;
+}
+
+
+.button {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Nastavenie tlačídka v Dive tlačídka*/
+.button > button {
+  width: 150px;
+  height: 50px;
+  background: rgba(10, 10, 10, 0.7);;
+  color: white;
+  transition: 0.5s;
+}
+
+
+
+
+
+
+
+/*Zmeny pre adminske menu*/
+
+
+
+
+.holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+}
+
+
+.profil {
+  display: flex;
+  flex-direction: column;
+
+  width: 65vh;
+  height: 65vh;
+
+  border-radius: 7%;
+
+  color: white;
+  background: rgba(10, 10, 10, 0.6);
+  box-shadow: 2px 2px 5px rgb(218, 212, 211);
+  backdrop-filter: blur(15px);
+}
+
+.nameRow {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 2rem;
+
+  padding: 2rem;
+}
+
+.profilCenter {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.inputWithLabelProfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  width: auto;
+}
+
+.centerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.profilButton {
+  background: transparent;
+  font-size: 16px;
+
+  border: 2px solid white;
+  border-radius: 20px;
+
+  width: 30%;
+  cursor: pointer;
+
+  margin: 2rem;
+  padding: 1rem;
+
+  color: white;
+
+  transition: all 0.4s ease-in-out;
+}
+
+.profilButton:hover {
+  text-decoration: underline;
+  border-radius: 0%;
+}
+
+.searcher {
+  background-color: #1a1a1a;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 15px;
+  transition: all 0.3s;
+  box-shadow: 0px 0px 0px 1px #00E6F6;
+}
+
+.searcher:focus {
+  outline: none;
+  box-shadow: 0px 0px 0px 2px #00E6F6, 0px 0px 0px 2px rgba(0, 230, 246, 0.4);
+}
+
+
+.inputFieldProfil {
+  color: white;
+  width: auto;
+  padding: 1rem;
+  margin-bottom: 10px;
+  font-size: 18px;
+
+  background-color: transparent;
+  
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+.points:hover {
+  color: #15a8b3;
+}
+
+.inputFieldProfil:hover:focus {
+  border-bottom: 1px solid #00E6F6;
+}
+
+
+
+
+
+/*Zmeny pre adminske menu*/
+
+
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+  background-color: #191C24;
+}
+
+.nav li a, .dropbtn {
+  display: inline-block;
+  color: #c2c5ce;
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav li a:hover, .dropdown:hover .dropbtn {
+  background-color: #0f1118;
+  border-top: solid 1px #0DCAF0;
+  color: white;
+}
+
+.nav li.dropdown {
+  display: inline-block;
+}
+
+.nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #191C24;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+  z-index: 1;
+}
+
+.nav .dropdown-content a {
+  color: #c2c5ce;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav .dropdown-content a:hover {
+  background-color: #0f1118;
+  border-bottom: solid 1px #0DCAF0;
+  color: white;
+}
+
+.nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#adminActive {
+  background-color: #0f1118;
+  border-top: solid 1px #0DCAF0;
+  border-bottom: solid 1px #0DCAF0;
+  color: white;
+}
+
+.content {
+  padding: 2rem;
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  overflow: auto;
+
+  
+  background-color: #070708;
+}
+
+.spotUpdate {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.spotUpdateRow {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  margin: 3rem;
+}
+
+.update {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(62, 65, 75, 0.2);
+  backdrop-filter: blur(25px);
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.updateSmall {
+  display: flex;
+  font-weight: 100;
+  align-items: center;
+  justify-content: center;
+  background-color: #191C24; 
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  margin-bottom: 0.7rem; 
+  transition: 0.3s ease-in-out;
+}
+
+.updateSmall:hover {
+  background-color: #0f1118;
+  transform: scale(1.05);
+}
+
+.updateSmall::before {
+  content: ""; 
+  position: absolute; 
+  width: 100%; 
+  height: 4px; 
+  bottom: 0; 
+  left: 0; 
+  background-color: #14cedb; 
+  visibility: hidden; 
+  transform: scaleX(0); 
+  transition: all 0.3s ease-in-out; 
+}
+
+.updateSmall:hover::before {
+  visibility: visible; 
+  transform: scaleX(1); 
+}
+
+.info {
+  color: #14cedb;
+}
+
+
+.update h1{
+  font-weight: 100;
+  font-size: 1.5rem;
+  word-wrap: normal;
+}
+
+#updateName {
+  text-align: center;
+}
+
+.zmaz {
+  padding: 0.7rem;
+  margin-right: 1rem;
+
+  background-color: #AB2E3C;
+  color: white;
+
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.uprav{
+  padding: 0.7rem;
+
+  background-color: #0D6EFD;
+  color: white;
+
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+
+.uprav a {
+  color: white;
+  text-decoration: none;
+}
+
+.zmaz:hover {
+  background-color: #9b0e1e;
+  transform: translateY(3px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.uprav:hover {
+  transform: translateY(3px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: #022c6b;  
+}
+
+.textCenter {
+  margin: 10px;
+}
+
+.updateForm {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 10px;
+  overflow: auto;
+
+  max-width: 100%;
+  height: 95%;
+  background-color: #191C24;
+
+  border: solid black 2px;
+
+}
+
+.buttonForm {
+  margin: 10px;
+  background-color: #1c8eec;
+  border-radius: 20px;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.buttonForm:hover {
+  background-color: #191C24;
+  transform: translateY(5px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/*                 Alerty     a          Inputy         */
+
+.inputWithLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  width: auto;
+}
+
+
+.radioRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.radioRow input {
+  width: 100%;
+}
+
+
+.inputField {
+  background-color: #101218;
+  color: white;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid #0DCAF0;
+  transition: border-bottom 0.2s ease-in-out;
+  font-size: 1rem;
+}
+
+.inputField:focus {
+  border-bottom: 2px solid #1c8eec;
+  outline: none;
+}
+
+.labelForInput {
+  align-self: flex-start;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.labelForInputDanger {
+  color: #db352ff3;
+}
+
+.inputFieldDanger {
+  border-bottom: 2px solid #eb2121;
+}
+
+.inputFieldDanger:focus {
+  border-bottom: 2px solid #eb2121;
+  outline: none;
+}
+
+.loginDangerLabel {
+ 
+  width: max-content;
+  padding: 10px;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  margin-top: 5px;
+  font-size: 16px;
+
+  align-self: center;
+
+  background-color: rgb(212, 164, 168);
+  border-color: rgba(220, 53, 69, 1);
+  color: rgba(114, 28, 36,1);
+}
+
+.loginSucessLabel {
+
+  width: max-content;
+  padding: 10px;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  margin-top: 5px;
+  font-size: 15px;
+
+  align-self: center;
+
+  background-color: rgba(227, 253, 235, 1);
+  border-color: rgba(38, 179, 3, 1);
+  color: rgba(60, 118, 61, 1);
+}
+
+@media screen and (max-height: 800px) {
+  .profil {
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  /* Pri telefóne nebude vidno ľavú stranu pri logine */
+  .woLogin {
+    display: none;
+  }
+  
+  /* Login bude roztiahnutý na celú obrazovku */
+  .login {
+    width: 100%;
+    max-width: 100%;
+    font-size: 14px;
+  } 
+
+  .input > input {
+    border: none;
+  }
+  
+
+  .input  {
+    border-bottom: 1px solid white;
+  } 
+
+  /* Text pre uživateľov na mobilnom telefóne bude viditelný */
+  .mobil {
+      display: block;
+  }
+
+
+  /* Zmena velkosti registračného tlačídka pri mobile */
+  .regButton {
+  
+    width: 80%;
+
+  }
+
+  /* Zmena veľkostí registračného menu */
+  .loginReg {
+      width: 60%;  
+  }
+
+  .loginReg > h1 {
+    font-size: 1.7rem;
+  }
+
+  .inputReg {
+    border-bottom: 1px solid white;
+  }
+
+  .inputReg > input {
+    font-size: 0.8rem;
+    border: none;
+  }
+
+  .inputBlueFocus:hover {
+    border: none;
+  }
+
+  .inputBlueFocus:focus {
+    border: none;
+  }
+
+  .content {
+    padding: 0rem;
+  }
+
+  .update > h1{
+    font-size: 1rem;
+  }
+
+  .zmaz {
+    padding: 0.4rem;
+  }
+
+  .uprav {
+    padding: 0.4rem;
+  }
+
+  .radioRow .inputField  {
+    width: 100%;
+  }
+
+  .updateForm input  {
+    width: 40%;
+  }
+
+  .updateForm textarea {
+    width: 40%;
+  }
+
+  .levelInput > input {
+    font-size: 1.1rem;
+  }
+
+  .level > h1 {
+    font-size: 1.7rem;
+  }
+
+
+  .level > h5 {
+    font-size: 1.2rem;
+  }
+
+  .pomocka {  
+    max-width: 300px;
+    font-size: 0.8rem;
+  }
+
+  .spotUpdate {
+    padding: 3rem;
+  }
+
+  .text {
+    margin: 5rem;
+    max-height: 750px;
+  }
+
+  .text > h1 {
+    font-size: 2.2rem;
+  }
+
+  .level{
+    justify-content: center;
+  }
+  .pomocka > img {
+    width: 5rem; 
+  }
+
+  .updateSmall {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+    width: 300px;
+    height: 80px;
+  }
+
+  .levely {
+    width: 100%;
+    max-height: 50%;
+    top: 25%;
+    bottom:25%;
+    background: rgba(10, 10, 10, 0.6);
+    box-shadow: 2px 2px 5px rgb(71, 69, 69);
+    backdrop-filter: blur(15px);
+    border-radius: 15%;
+    padding: 10px;
+  }
+
+  .levely > ul {
+    position:absolute;
+    width: 100%;
+    max-height: 50%;
+    overflow:auto; 
+    top: 25%;
+    bottom:25%;
+    padding: 1rem;
+  }
+  
+  .labelForInput {
+    align-self: center;
+  }
+
+  .inputWithLabel {
+    width: 200%;
+  }
+
+  .updateForm {
+    padding: 0.5rem;
+  }
+  .nameRow {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0.3rem;
+  }
+
+  .profil {
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+  }
+
+
+  .profilCenter {
+    font-size: 0.9rem;
+    margin: 0.6rem;
+    border: 1px solid white;
+
+    padding: 0.3rem;
+  }
+
+  .inputFieldProfil  {
+    font-size: 0.7rem;
+    margin: 0;
+    border: none;
+  }
+
+  .inputWithLabelProfil {
+    border-bottom: 1px solid white;
+  }
+
+  .labelForInput  {
+    font-size: 0.7rem;
+    margin: 0;
+  }
+  
+  .centerButton{
+    margin-top: 0.2rem;
+  }
+
+  .searcher {
+    max-width: 150px;
+  }
+
+  .profilButton {
+    margin: 20px;
+    padding: 1rem;
+    font-size: 0.7rem;
+    width: auto;
+    height: auto;
+  }
+
+  .stats {
+    font-size: 10px;
+    margin: 0;
+    padding: 2rem;
+  }
+  .stats > h1 {
+    margin-top: 2rem;
+  }
+}
